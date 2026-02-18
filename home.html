@@ -28,7 +28,7 @@
 
     <section class="rounded-b-xl">
 
-        <div class="navbar bg-base-100 shadow-sm flex justify-between mt-6 sticky top-0 z-99 overflow-hidden">
+        <div class="navbar bg-base-100 shadow-sm flex justify-between mt-6 sticky top-0 z-50">
             <div class="flex">
                 <img class="w-[60px]" src="assets/logo.png" alt="">
                 <div>
@@ -70,7 +70,7 @@
                 <img class="mx-auto" src="assets/opt-5.png" alt="">
                 <h1 class="text-[14px] mt-2">Pay Bill</h1>
             </button>
-            <button class="btn flex-col py-5 h-full btn-primary btn-soft">
+            <button onclick="showOnly('payment_list')" class="btn flex-col py-5 h-full btn-primary btn-soft">
                 <img class="mx-auto" src="assets/opt-6.png" alt="">
                 <h1 class="text-[14px] mt-2">Transactions</h1>
             </button>
@@ -78,100 +78,10 @@
 
     </section>
 
-    <section id="payment_list" class="bg-gray-100 hidden">
-        <div>
-            <div class="flex justify-between items-center py-6 px-5">
-                <h1 class="text-[18px] font-semibold">Latest Payment</h1>
-                <button>View All</button>
-            </div>
-            <div class="space-y-5 mx-5">
-                <div class="navbar bg-base-100 border-1 border-gray-300 rounded-xl flex justify-between">
-                    <div class="flex items-center">
-                        <div class="p-3 rounded-full bg-gray-100">
-                            <img src="assets/opt-1.png" alt="">
-                        </div>
-                        <div class="pl-3">
-                            <h1 class="text-[18px] font-extrabold">Electricity Bill</h1>
-                            <h3 class="text-[14px] text-[#080808]/50">Today 01:44 AM</h3>
-                        </div>
-                    </div>
-                    <div>
-                        <a>
-                            <i class="fa-solid fa-ellipsis rotate-90"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="navbar bg-base-100 border-1 border-gray-300 rounded-xl flex justify-between">
-                    <div class="flex items-center">
-                        <div class="p-3 rounded-full bg-gray-100">
-                            <img src="assets/opt-1.png" alt="">
-                        </div>
-                        <div class="pl-3">
-                            <h1 class="text-[18px] font-extrabold">Electricity Bill</h1>
-                            <h3 class="text-[14px] text-[#080808]/50">Today 01:44 AM</h3>
-                        </div>
-                    </div>
-                    <div>
-                        <a>
-                            <i class="fa-solid fa-ellipsis rotate-90"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="navbar bg-base-100 border-1 border-gray-300 rounded-xl flex justify-between">
-                    <div class="flex items-center">
-                        <div class="p-3 rounded-full bg-gray-100">
-                            <img src="assets/opt-1.png" alt="">
-                        </div>
-                        <div class="pl-3">
-                            <h1 class="text-[18px] font-extrabold">Electricity Bill</h1>
-                            <h3 class="text-[14px] text-[#080808]/50">Today 01:44 AM</h3>
-                        </div>
-                    </div>
-                    <div>
-                        <a>
-                            <i class="fa-solid fa-ellipsis rotate-90"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="navbar bg-base-100 border-1 border-gray-300 rounded-xl flex justify-between">
-                    <div class="flex items-center">
-                        <div class="p-3 rounded-full bg-gray-100">
-                            <img src="assets/opt-1.png" alt="">
-                        </div>
-                        <div class="pl-3">
-                            <h1 class="text-[18px] font-extrabold">Electricity Bill</h1>
-                            <h3 class="text-[14px] text-[#080808]/50">Today 01:44 AM</h3>
-                        </div>
-                    </div>
-                    <div>
-                        <a>
-                            <i class="fa-solid fa-ellipsis rotate-90"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="navbar bg-base-100 border-1 border-gray-300 rounded-xl flex justify-between">
-                    <div class="flex items-center">
-                        <div class="p-3 rounded-full bg-gray-100">
-                            <img src="assets/opt-1.png" alt="">
-                        </div>
-                        <div class="pl-3">
-                            <h1 class="text-[18px] font-extrabold">Electricity Bill</h1>
-                            <h3 class="text-[14px] text-[#080808]/50">Today 01:44 AM</h3>
-                        </div>
-                    </div>
-                    <div>
-                        <a>
-                            <i class="fa-solid fa-ellipsis rotate-90"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
 
 
-    <section id="cash_out" class=" bg-gray-100 overflow-hidden z-10">
+    <section id="cash_out" class=" bg-gray-100 overflow-hidden z-10 hidden">
         <div>
             <h1 class="text-[18px] font-semibold ml-4 py-4">Cash Out</h1>
             <div class="card bg-base-100 mx-3  shrink-0 shadow-2xl">
@@ -194,7 +104,7 @@
     </section>
 
 
-    <section id="add_money" class=" bg-gray-100 ">
+    <section id="add_money" class=" bg-gray-100 hidden">
         <div>
             <h1 class="text-[18px] font-semibold ml-4 py-4">Add Money</h1>
             <div class="card bg-base-100 mx-3  shrink-0 shadow-2xl">
@@ -223,6 +133,36 @@
 
         </div>
     </section>
+
+
+        <section id="payment_list" class="bg-gray-100 hidden">
+        <div>
+            <div class="flex justify-between items-center py-6 px-5">
+                <h1 class="text-[18px] font-semibold">Latest Payment</h1>
+                <button>View All</button>
+            </div>
+            <div id="container" class="space-y-5 mx-5 pb-10">
+                <!-- <div class="navbar bg-base-100 border-1 border-gray-300 rounded-xl flex justify-between">
+                    <div class="flex items-center">
+                        <div class="p-3 rounded-full bg-gray-100">
+                            <img src="assets/opt-1.png" alt="">
+                        </div>
+                        <div class="pl-3">
+                            <h1 id="nameT" class="text-[18px] font-extrabold">Electricity Bill</h1>
+                            <h3 id="time" class="text-[14px] text-[#080808]/50">Today 01:44 AM</h3>
+                        </div>
+                    </div>
+                    <div>
+                        <a>
+                            <i class="fa-solid fa-ellipsis rotate-90"></i>
+                        </a>
+                    </div>
+                </div> -->
+
+            </div>
+        </div>
+    </section>
+
 
 
 
